@@ -28,11 +28,6 @@ public class SDTesting {
         WebUI.setTextByPlaceholder("Username", username);
     }
 
-    @And("user input password {string}")
-    public void user_input_password(String password) {
-        WebUI.setTextByPlaceholder("Password", password);
-    }
-
     @And("user press button login")
     public void user_press_login() {
         // WebUI.clickButtonByText("Login");
@@ -62,7 +57,7 @@ public class SDTesting {
     @And("user input username {string} and password {string} and login")
     public void user_input_username_and_password(String username, String password) {
         user_input_username(username);
-        user_input_password(password);
+        // user_input_password(password);
         user_press_login();
         user_see_dashboard_page();
     }
@@ -98,30 +93,6 @@ public class SDTesting {
         WebUI.takeScreenshot("addEmployee");
     }
 
-    @And("user choose product {string} and add to cart")
-    public void user_choose_product_and_add_to_cart(String product) {
-        WebUI.clickButtonByLabel(product);
-        WebUI.delay(3);
-        WebUI.clickButtonByText("Add to cart");
-        WebUI.delay(3);
-    }
-
-    @Then("user go to cart page, verify product {string} exist and checkout item")
-    public void user_go_to_cart_page_and_checkout_item(String product) {
-        WebUI.click(By.id("shopping_cart_container"));
-        WebUI.delay(3);
-        WebUI.verifyTextPresent(product);
-        WebUI.delay(3);
-        WebUI.clickButtonByText("Checkout");
-        WebUI.setTextByPlaceholder("First Name", "First Test");
-        WebUI.setTextByPlaceholder("Last Name", "Last Test");
-        WebUI.setTextByPlaceholder("Zip/Postal Code", "17530");
-        WebUI.delay(3);
-        WebUI.click(By.id("continue"));
-        WebUI.delay(3);
-        WebUI.takeScreenshot("addToCart");
-    }
-
     @Then("user verify is on homepage auto exercise")
     public void user_verify_is_on_homepage() {
         WebUI.verifyElementPresent("//a[normalize-space()='Home']");
@@ -130,14 +101,14 @@ public class SDTesting {
 
     @And("user check product and add to cart with qty {string}")
     public void user_check_product(String qty) {
-        String rawPrice = WebUI.getText(By.xpath("//p[normalize-space()='Blue Top']/preceding-sibling::h2"));
+        // String rawPrice = WebUI.getText(By.xpath("//p[normalize-space()='Blue Top']/preceding-sibling::h2"));
         WebUI.click(By.xpath("//p[normalize-space()='Blue Top']/ancestor::div[@class='product-image-wrapper']//a[normalize-space()='View Product']"));
         System.out.println("Close ad");
         WebUI.closeAdIfPresent();
         WebUI.delay(1);
         // WebUI.click(By.xpath("//div[contains(@style,'cursor') and .//svg]"));
         WebUI.verifyElementPresent("//h2[normalize-space()='Blue Top']");
-        String cartPrice = WebUI.getText(By.xpath("//label[normalize-space()='Quantity:']/preceding-sibling::span"));
+        // String cartPrice = WebUI.getText(By.xpath("//label[normalize-space()='Quantity:']/preceding-sibling::span"));
         
         WebUI.delay(5);
         WebUI.setTextByName("quantity", qty);

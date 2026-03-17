@@ -4,12 +4,16 @@ import base.DriverManager;
 
 import java.time.Duration;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.apache.commons.io.FileUtils;
@@ -90,6 +94,7 @@ public class WebUI {
             return true;
         } catch (TimeoutException e) {
             System.out.println("Element NOT found: " + xpath);
+            stopIfFalse(false, xpath);
             return false;
         }
     }
@@ -130,7 +135,31 @@ public class WebUI {
         try {
             By locator = By.xpath("//a[normalize-space()='" + text + "']");
             findElement(locator);
-            System.out.println("SUCCESS: Text is present: '" + text + "'");
+            if(getText(locator).equals(text)) {
+                assertEquals("SUCCESS: Text is present: '" + text + "'", text, getText(locator));
+                System.out.println("SUCCESS: Text is present: '" + text + "'");
+            } else {
+                System.out.println("ERROR: Text is not present: '" + text + "'");
+                throw new RuntimeException("Text not found");
+            }
+        } catch (TimeoutException e) {
+            System.out.println("ERROR: Text: '" + text + "' not found after waiting 10 seconds.");
+            throw new RuntimeException("Element not found");
+        }
+    }
+
+    public static void verifyTextContains(String text) {
+        try {
+            By locator = By.xpath("//a[contains(normalize-space(.), '" + text + "')]");
+            findElement(locator);
+            String actualText = getText(locator);
+            if (actualText.contains(text)) {
+                assertTrue("SUCCESS: Text contains expected substring: '" + text + "'", actualText.contains(text));
+                System.out.println("SUCCESS: Text contains: '" + text + "'");
+            } else {
+                System.out.println("ERROR: Expected text to contain: '" + text + "', but actual was: '" + actualText + "'");
+                throw new RuntimeException("Text does not contain expected substring");
+            }
         } catch (TimeoutException e) {
             System.out.println("ERROR: Text: '" + text + "' not found after waiting 10 seconds.");
             throw new RuntimeException("Element not found");
@@ -174,31 +203,58 @@ public class WebUI {
 
     public static void closeAdIfPresent() {
 
-    WebDriver driver = DriverManager.getDriver();
+        WebDriver driver = DriverManager.getDriver();
 
-    try {
-        List<WebElement> iframes = driver.findElements(By.tagName("iframe"));
+        try {
+            List<WebElement> iframes = driver.findElements(By.tagName("iframe"));
 
-        for (WebElement frame : iframes) {
-            driver.switchTo().frame(frame);
+            for (WebElement frame : iframes) {
+                driver.switchTo().frame(frame);
 
-            System.out.println("iframe");
-            List<WebElement> closeBtn = driver.findElements(
-                By.xpath("//div[contains(@style,'cursor') and .//svg]")
-            );
+                System.out.println("iframe");
+                List<WebElement> closeBtn = driver.findElements(
+                        By.xpath("//div[contains(@style,'cursor') and .//svg]"));
 
-            if (!closeBtn.isEmpty()) {
-                closeBtn.get(0).click();
+                if (!closeBtn.isEmpty()) {
+                    closeBtn.get(0).click();
+                    driver.switchTo().defaultContent();
+                    return;
+                }
+
                 driver.switchTo().defaultContent();
-                return;
             }
 
+        } catch (Exception e) {
             driver.switchTo().defaultContent();
         }
-
-    } catch (Exception e) {
-        driver.switchTo().defaultContent();
     }
-}
+
+    public static void selectDropdownByText(By locator, String text) {
+        try {
+            WebElement element = findElement(locator);
+            Select dropdown = new Select(element);
+            dropdown.selectByVisibleText(text);
+            System.out.println("SUCCESS: Selected '" + text + "'");
+        } catch (Exception e) {
+            throw new RuntimeException("Dropdown selection failed: " + text);
+        }
+    }
+
+    public static String getValue(By locator) {
+        try {
+            WebElement element = findElement(locator);
+            String value = element.getAttribute("value");
+            System.out.println("Value: " + value);
+            return value;
+        } catch (Exception e) {
+            throw new RuntimeException("Failed to get value from element: " + locator);
+        }
+    }
+
+    public static void switchToIframe(By locator) {
+        WebDriver driver = DriverManager.getDriver();
+        WebElement iframe = findElement(locator);
+        driver.switchTo().frame(iframe);
+    }
 
 }
