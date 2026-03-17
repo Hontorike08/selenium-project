@@ -62,6 +62,24 @@ public class WebUI {
         }
     }
 
+    public static void setTextSlowlyByPlaceholder(String placeholder, String value) {
+        try {
+            By locator = By.xpath("//input[@placeholder='" + placeholder + "']");
+            WebElement field = findElement(locator);
+            field.click();
+            field.clear();
+
+            for (char c : value.toCharArray()) {
+                field.sendKeys(String.valueOf(c));
+                Thread.sleep(100); // delay per character
+            }
+
+            System.out.println("SUCCESS: Input slowly '" + value + "'");
+        } catch (Exception e) {
+            throw new RuntimeException("Failed to input text slowly: " + value);
+        }
+    }
+
     public static void setTextByName(String name, String value) {
         try {
             By locator = By.xpath("//input[@name='" + name + "']");

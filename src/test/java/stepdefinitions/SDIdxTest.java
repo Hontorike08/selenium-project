@@ -147,7 +147,7 @@ public class SDIdxTest {
         DriverManager.getDriver().switchTo().defaultContent();
 
         WebUI.switchToIframe(By.xpath("//iframe[@title='Field container for: Expiration date (MM / YY)']"));
-        WebUI.setTextByPlaceholder("Expiration date (MM / YY)", expiryDate);
+        WebUI.setTextSlowlyByPlaceholder("Expiration date (MM / YY)", expiryDate);
         WebUI.delay(1);
         DriverManager.getDriver().switchTo().defaultContent();
 

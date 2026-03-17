@@ -40,4 +40,4 @@ Scenario Outline: Add item to cart
 
 Examples:
 | product     | qty | total | email                   | firstName | lastName | company    | address     | city      | province  | postalCode | phone          | cardNumber          | expiryDate | cvv  |
-| Grey jacket | 1   | 55    | tetexe422@inboxbear.com | John      | Doe      | Test Inc   | 123 Test St | Test City | West Java | 12345      | 0821-1054-5855 | 5552 0000 8888 8080 | 1227       | 123  |
+| Grey jacket | 1   | 55    | tetexe422@inboxbear.com | John      | Doe      | Test Inc   | 123 Test St | Test City | West Java | 12345      | 0821-1054-5855 | 5552 0000 8888 8080 | 1327       | 123  |
