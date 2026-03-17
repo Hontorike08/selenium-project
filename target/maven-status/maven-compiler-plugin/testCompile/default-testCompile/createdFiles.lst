@@ -1,0 +1,5 @@
+stepdefinitions\palindrom.class
+stepdefinitions\SDTesting.class
+base\DriverManager.class
+component\WebUI.class
+runner\TestRunner.class
