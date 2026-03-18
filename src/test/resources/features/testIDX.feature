@@ -59,4 +59,17 @@ Scenario Outline: Add item to cart
 
 Examples:
 | product     | qty | total | email                   | firstName | lastName | company    | address     | city      | province  | postalCode | phone          | cardNumber          | expiryDate | cvv  |
-| Grey jacket | 1   | 55    | tetexe422@inboxbear.com | John      | Doe      | Test Inc   | 123 Test St | Test City | West Java | 12345      | 0821-1054-5855 | 5552 0000 8888 8080 | 1327       | 123  |
+| Grey jacket | 1   | 55    | tetexe422@inboxbear.com | John      | Doe      | Test Inc   | 123 Test St | Test City | West Java | 12345      | 0821-1054-5855 | 5552 0000 8888 8080 | 1227       | 123  |
+
+
+@testIDX-update-qty
+Scenario Outline: Update item quantity in cart
+    Given user opens Chrome browser and navigate to url "https://sauce-demo.myshopify.com/"
+    And user choose product "<product>" and add to cart
+    Then user go to cart page, verify product "<product>" exist and update qty "<qty>" and see total "<total>" and checkout item
+    And user verify on payment page and fill email "<email>" and first name "<firstName>" and last name "<lastName>" and company "<company>" and address "<address>" and city "<city>" and province "<province>" and postal code "<postalCode>" and phone "<phone>" and card number "<cardNumber>" and expiry month and year "<expiryDate>" and cvv "<cvv>" and name on card "<firstname>" and click pay now
+    Then user close browser
+
+Examples:
+| product     | qty | total | email                   | firstName | lastName | company    | address     | city      | province  | postalCode | phone          | cardNumber          | expiryDate | cvv  |
+| Grey jacket | 2   | 110   | tetexe422@inboxbear.com | John      | Doe      | Test Inc   | 123 Test St | Test City | West Java | 12345      | 0821-1054-5855 | 5552 0000 8888 8080 | 1227       | 123  |

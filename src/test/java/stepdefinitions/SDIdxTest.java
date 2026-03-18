@@ -231,23 +231,26 @@ public class SDIdxTest {
 
     @Then("user go to cart page, verify product {string} exist and qty {string} and total {string} and checkout item")
     public void user_go_to_cart_page_and_checkout_item(String product, String qty, String total) {
-        // WebUI.click(By.id("shopping_cart_container"));
         WebUI.clickButtonByLabel("Check Out");
         WebUI.delay(3);
-        WebUI.click(By.xpath("//a[contains(normalize-space(.), 'My Cart')]"));
-        // WebUI.verifyTextPresent(product);
-        WebUI.verifyTextContains(product);
-        String getQty = WebUI.getValue(By.xpath("//input[@type='text' and @name='updates[]']"));
+        // WebUI.click(By.xpath("//a[contains(normalize-space(.), 'My Cart')]"));
+        // WebUI.verifyTextContains(product);
+        WebUI.verifyTextContainsByLocator(By.xpath("//div[@class='row']//h3/a[contains(normalize-space(.), '" + product + "')]"), product);
+        String getQty = WebUI.getValue(By.xpath("//h3[a[contains(normalize-space(.), '" + product + "')]]/ancestor::div[@class='row']//input[@name='updates[]']"));
         System.out.println("getQty: " + getQty);
-        String rawTotal = WebUI.getText(By.xpath("//span[contains(normalize-space(), '£" + total + "')]"));
-        String getTotal = rawTotal.replace("£", "").trim();
-        System.out.println("getTotal: " + getTotal);
-        int gTotal = Integer.parseInt(getQty) * (int) Double.parseDouble(getTotal);
+
+        String rawBaseValue = WebUI.getText(By.xpath("//h3[a[contains(normalize-space(.), '" + product + "')]]/ancestor::div[@class='row']//div[@class='two columns price desktop']"));
+        String getBaseValue = rawBaseValue.replace("£", "").trim();
+        System.out.println("getBaseValue: " + getBaseValue);
+
+        int gTotal = Integer.parseInt(getQty) * (int) Double.parseDouble(getBaseValue);
         System.out.println("gTotal: " + gTotal);
+
         String rawActualTotal = WebUI.getText(By.xpath("//h2[contains(normalize-space(), '£" + gTotal + "')]"));
         String actualTotal = rawActualTotal.replace("Total", "").replace("£", "").trim();
         System.out.println("actualTotal: " + actualTotal);
         globalTotalPrice = String.valueOf(gTotal);
+
         assertEquals("Total price is not correct", gTotal, (int) Double.parseDouble(actualTotal));
         WebUI.click(By.xpath("//a[contains(normalize-space(.), 'My Cart')]"));
         WebUI.delay(3);
