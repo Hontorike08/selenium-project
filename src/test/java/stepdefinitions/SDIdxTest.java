@@ -12,11 +12,30 @@ import java.util.Map;
 import component.WebUI;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 
 public class SDIdxTest {
 
+    //mvn clean test -Dcucumber.filter.tags=""
+
     public static String globalTotalPrice;
+    public static String update = "No";
+    public static int grandExpectedTotal = 0;
+
+    @Given("user opens Chrome browser and navigate to url {string}")
+    public void open_chrome_and_go_to_url(String url) {
+        System.out.println("URL: " + url);
+        DriverManager.initDriver();
+        DriverManager.getDriver().get(url);
+    }
+
+    @Given("user opens Firefox browser and navigate to url {string}")
+    public void open_firefox_and_go_to_url(String url) {
+        System.out.println("URL: " + url);
+        DriverManager.initDriverFirefox();
+        DriverManager.getDriver().get(url);
+    }
 
     @Then("user verify is in Create Account page")
     public void user_verify_is_in_create_account_page() {
@@ -92,78 +111,6 @@ public class SDIdxTest {
         System.out.println("User is on My Account page");
     }
 
-    @And("user choose product {string} and add to cart")
-    public void user_choose_product_and_add_to_cart(String product) {
-        // WebUI.clickButtonByLabel(product);
-        WebUI.click(By.xpath("//h3[normalize-space()='" + product + "']"));
-        WebUI.delay(3);
-        String actualProdcutName = WebUI.getText(By.xpath("//h1[normalize-space()='" + product + "']"));
-        assertEquals("Product Name Not Equal", product, actualProdcutName);
-        // WebUI.clickButtonByText("Add to cart");
-        WebUI.click(By.xpath("//input[@type='submit' and @value='Add to Cart']"));
-        WebUI.delay(3);
-    }
-
-    @And("user choose product {string} with size {string} and color {string} and add to cart")
-    public void user_choose_product_with_size_and_color_and_add_to_cart(String product, String size, String color) {
-        String[] products = product.split(",");
-        String[] sizes = size.split(",");
-        String[] colors = color.split(",");
-
-        for (int i = 0; i < products.length; i++) {
-
-            String currentProduct = products[i].trim();
-            String currentSize = i < sizes.length ? sizes[i].trim() : "";
-            String currentColor = i < colors.length ? colors[i].trim() : "";
-
-            System.out.println("Processing: " + currentProduct);
-            System.out.println("Processing: " + currentSize);
-            System.out.println("Processing: " + currentColor);
-
-            // Click product
-            WebUI.click(By.xpath("//h3[normalize-space()='" + currentProduct + "']"));
-            WebUI.delay(2);
-
-            // Verify product name
-            String actualProductName = WebUI.getText(By.xpath("//h1"));
-            if (!actualProductName.equals(currentProduct)) {
-                throw new AssertionError("Product Name Not Equal. Expected: " + currentProduct + ", Got: " + actualProductName);
-            }
-
-            // Select Size
-            if (!currentSize.isEmpty()) {
-                if (WebUI.verifyElementPresent("//label[normalize-space()='Size']")) {
-                    WebUI.selectDropdownByText(
-                        By.xpath("//label[normalize-space()='Size']/following-sibling::select"),
-                        currentSize
-                    );
-                } else {
-                    System.out.println("Size dropdown not available for " + currentProduct);
-                }
-            }
-
-            // Select Color
-            if (!currentColor.isEmpty()) {
-                if (WebUI.verifyElementPresent("//label[normalize-space()='Color']")) {
-                    WebUI.selectDropdownByText(
-                        By.xpath("//label[normalize-space()='Color']/following-sibling::select"),
-                        currentColor
-                    );
-                } else {
-                    System.out.println("Color dropdown not available for " + currentProduct);
-                }
-            }
-
-            // Add to cart
-            WebUI.click(By.xpath("//input[@type='submit' and @value='Add to Cart']"));
-            WebUI.delay(2);
-
-            // Optional: go back to product list
-            DriverManager.getDriver().navigate().back();
-            WebUI.delay(2);
-        }
-    }
-
     @And("user choose products and add to cart")
     public void user_choose_products_and_add_to_cart(DataTable table) {
         WebUI.delay(5);
@@ -229,40 +176,11 @@ public class SDIdxTest {
         }
     }
 
-    @Then("user go to cart page, verify product {string} exist and qty {string} and total {string} and checkout item")
-    public void user_go_to_cart_page_and_checkout_item(String product, String qty, String total) {
-        WebUI.clickButtonByLabel("Check Out");
-        WebUI.delay(3);
-        // WebUI.click(By.xpath("//a[contains(normalize-space(.), 'My Cart')]"));
-        // WebUI.verifyTextContains(product);
-        WebUI.verifyTextContainsByLocator(By.xpath("//div[@class='row']//h3/a[contains(normalize-space(.), '" + product + "')]"), product);
-        String getQty = WebUI.getValue(By.xpath("//h3[a[contains(normalize-space(.), '" + product + "')]]/ancestor::div[@class='row']//input[@name='updates[]']"));
-        System.out.println("getQty: " + getQty);
-
-        String rawBaseValue = WebUI.getText(By.xpath("//h3[a[contains(normalize-space(.), '" + product + "')]]/ancestor::div[@class='row']//div[@class='two columns price desktop']"));
-        String getBaseValue = rawBaseValue.replace("£", "").trim();
-        System.out.println("getBaseValue: " + getBaseValue);
-
-        int gTotal = Integer.parseInt(getQty) * (int) Double.parseDouble(getBaseValue);
-        System.out.println("gTotal: " + gTotal);
-
-        String rawActualTotal = WebUI.getText(By.xpath("//h2[contains(normalize-space(), '£" + gTotal + "')]"));
-        String actualTotal = rawActualTotal.replace("Total", "").replace("£", "").trim();
-        System.out.println("actualTotal: " + actualTotal);
-        globalTotalPrice = String.valueOf(gTotal);
-
-        assertEquals("Total price is not correct", gTotal, (int) Double.parseDouble(actualTotal));
-        WebUI.click(By.xpath("//a[contains(normalize-space(.), 'My Cart')]"));
-        WebUI.delay(3);
-        WebUI.click(By.id("checkout"));
-    }
-
-    @Then("user go to cart page, verify product exist and qty and total")
+    @Then("user go to cart page and verify product exist and qty and total")
     public void user_go_to_cart_page_and_verify_product(DataTable table) {
         WebUI.clickButtonByLabel("Check Out");
         WebUI.click(By.xpath("//a[contains(normalize-space(.), 'My Cart')]"));
         WebUI.delay(3);
-        int grandExpectedTotal = 0;
         List<Map<String, String>> rows = table.asMaps(String.class, String.class);
         for (Map<String, String> row : rows) {
             String product = row.get("product").trim();
@@ -280,9 +198,28 @@ public class SDIdxTest {
             } else {
                 expectedTotal = expectedTotal.trim();
             }
-            System.out.println("Verifying product: " + product);
 
+            if(update.equals("Yes")) {
+                WebUI.delay(1);
+
+                // Get current base price
+                String baseValue = WebUI.getText(By.xpath("//h3[a[contains(normalize-space(text()),'" + product + "')]]/ancestor::div[@class='row']//div[contains(@class,'price')]"));
+                String price = baseValue.replace("£", "").trim();
+                System.out.println("price: " + price);
+
+                // Subtract the old total for the product from the grand total before updating the quantity
+                grandExpectedTotal -= Double.parseDouble(price);
+
+                WebUI.setText(By.xpath("//h3[a[contains(normalize-space(text()),'" + product + "')]]/ancestor::div[@class='row']//input[@name='updates[]']"), expectedQty);
+                WebUI.click(By.xpath("//input[@type='submit' and @value='Update']"));
+                WebUI.delay(3);
+                WebUI.click(By.xpath("//a[contains(normalize-space(.), 'My Cart')]"));
+            } else {
+                System.out.println("Skip updating qty");
+            }
+            
             // Verify product exists
+            System.out.println("Verifying product: " + product);
             WebUI.verifyTextContains(product);
 
             // Get Quantity
@@ -383,4 +320,21 @@ public class SDIdxTest {
         WebUI.click(By.id("checkout-pay-button"));
     }
 
+    @And("user checkout items")
+    public void user_checkout_items() {
+        WebUI.delay(5);
+        WebUI.click(By.id("checkout"));
+    }
+
+    @Then("user go to cart page and update qty and verify qty and total")
+    public void user_go_to_cart_page_and_update_qty_and_verify_qty_and_total(DataTable table) {
+        WebUI.delay(2);
+        update = "Yes";
+        user_go_to_cart_page_and_verify_product(table);
+    }
+
+    @Then("user close browser")
+    public void user_close_browser() {
+        DriverManager.quitDriver();
+    }
 }
