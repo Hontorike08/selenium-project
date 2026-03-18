@@ -4,24 +4,9 @@ import component.WebUI;
 
 import org.openqa.selenium.By;
 
-import base.DriverManager;
 import io.cucumber.java.en.*;
 
-//mvn clean test -Dcucumber.filter.tags=""
-
 public class SDTesting {
-
-    @Given("user opens Chrome browser and navigate to url {string}")
-    public void open_chrome_and_go_to_url(String url) {
-        System.out.println("URL: " + url);
-        DriverManager.initDriver();
-        DriverManager.getDriver().get(url);
-        // boolean verifLoginPage = WebUI.verifyElementPresent("//h5[normalize-space()='Login']");
-        // while(!verifLoginPage) {
-        //     System.out.println("Waiting to enter login page");
-        //     verifLoginPage = WebUI.verifyElementPresent("//h5[normalize-space()='Login']");
-        // }
-    }
 
     @And("user input username {string}")
     public void user_input_username(String username) {
@@ -47,11 +32,6 @@ public class SDTesting {
         } else {
             WebUI.stopIfFalse(verifDashboard, "Dashboard is not present");
         }
-    }
-
-    @Then("user close browser")
-    public void user_close_browser() {
-        DriverManager.quitDriver();
     }
 
     @And("user input username {string} and password {string} and login")

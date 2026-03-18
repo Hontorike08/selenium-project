@@ -6,6 +6,9 @@ import java.util.Map;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.firefox.FirefoxProfile;
 
 public class DriverManager {
 
@@ -30,6 +33,24 @@ public class DriverManager {
 
         options.setExperimentalOption("prefs", prefs);
         driver = new ChromeDriver(options);
+        driver.manage().window().maximize();
+    }
+
+    public static void initDriverFirefox() {
+
+        FirefoxOptions options = new FirefoxOptions();
+
+        // Disable notifications & password manager
+        FirefoxProfile profile = new FirefoxProfile();
+
+        profile.setPreference("dom.webnotifications.enabled", false);
+        profile.setPreference("dom.push.enabled", false);
+        profile.setPreference("signon.rememberSignons", false);
+        profile.setPreference("signon.autofillForms", false);
+
+        options.setProfile(profile);
+
+        driver = new FirefoxDriver(options);
         driver.manage().window().maximize();
     }
 
