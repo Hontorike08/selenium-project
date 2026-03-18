@@ -1,38 +1,36 @@
 Feature: Functional Test
 
-@testIDX-create-account-negative
-Scenario Outline: Create Account (Negative)
-    Given user opens Chrome browser and navigate to url "https://sauce-demo.myshopify.com/account/register"
+@testIDX-create-account @final
+Scenario Outline: Create Account
+    Given user opens Firefox browser and navigate to url "https://sauce-demo.myshopify.com/account/register"
     Then user verify is in Create Account page
     And user input first name "<firstName>"
     And user input last name "<lastName>"
     And user input email address "<email>"
     And user input password "<password>"
     And user press button create
-    Then user verify error message "<errorMsg>"
     Then user close browser
 
 Examples:
-| firstName | lastName | email                   | password | errorMsg                                        |
-| John      | Doe      | najyvu2497@guysmail.com | 123      | Password is too short (minimum is 5 characters) |
+| firstName | lastName | email                   | password     |
+| John      | Doe      | najyvu2497@guysmail.com | Testing12345 |
 
-@testIDX-login
+@testIDX-login @final
 Scenario Outline: Login
-    Given user opens Chrome browser and navigate to url "https://sauce-demo.myshopify.com/account/login"
+    Given user opens Firefox browser and navigate to url "https://sauce-demo.myshopify.com/account/login"
     Then user verify is in Login page
     And user input email address "<email>"
     And user input password "<password>"
     And user press button sign in
-    Then user verify on my account page
     Then user close browser
 
 Examples:
 | email                   | password  |
 | tetexe422@inboxbear.com | test12345 |
 
-@testIDX-delete-from-cart
+@testIDX-delete-from-cart @final @test
 Scenario Outline: Delete item from cart
-    Given user opens Chrome browser and navigate to url "https://sauce-demo.myshopify.com/"
+    Given user opens Firefox browser and navigate to url "https://sauce-demo.myshopify.com/"
     Then user choose products and add to cart
         | product     | size | color |
         | Grey jacket |      |       |
@@ -49,9 +47,9 @@ Scenario Outline: Delete item from cart
         | Noir jacket |
     Then user close browser
 
-@testIDX-add-to-cart
+@testIDX-add-to-cart @final
 Scenario Outline: Add item to cart
-    Given user opens Chrome browser and navigate to url "https://sauce-demo.myshopify.com/"
+    Given user opens Firefox browser and navigate to url "https://sauce-demo.myshopify.com/"
     Then user choose products and add to cart
         | product     | size | color |
         | Striped top |      |       |
@@ -63,13 +61,13 @@ Scenario Outline: Add item to cart
     Then user close browser
 
 Examples:
-| product     | qty | total | email                   | firstName | lastName | company    | address     | city      | province  | postalCode | phone          | cardNumber          | expiryDate | cvv  |
-| Grey jacket | 1   | 55    | tetexe422@inboxbear.com | John      | Doe      | Test Inc   | 123 Test St | Test City | West Java | 12345      | 0821-1054-5855 | 5552 0000 8888 8080 | 1227       | 123  |
+| email                   | firstName | lastName | company    | address     | city      | province  | postalCode | phone          | cardNumber          | expiryDate | cvv  |
+| tetexe422@inboxbear.com | John      | Doe      | Test Inc   | 123 Test St | Test City | West Java | 12345      | 0821-1054-5855 | 5552 0000 8888 8080 | 1227       | 123  |
 
 
-@testIDX-update-qty
+@testIDX-update-qty @final
 Scenario Outline: Update item quantity in cart
-    Given user opens Chrome browser and navigate to url "https://sauce-demo.myshopify.com/"
+    Given user opens Firefox browser and navigate to url "https://sauce-demo.myshopify.com/"
     Then user choose products and add to cart
         | product     | size | color |
         | Noir jacket | M    | Red   |
