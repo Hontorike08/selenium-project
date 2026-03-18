@@ -23,6 +23,13 @@ public class SDTesting {
         // }
     }
 
+    @Given("user opens Firefox browser and navigate to url {string}")
+    public void open_firefox_and_go_to_url(String url) {
+        System.out.println("URL: " + url);
+        DriverManager.initDriverFirefox();
+        DriverManager.getDriver().get(url);
+    }
+
     @And("user input username {string}")
     public void user_input_username(String username) {
         WebUI.setTextByPlaceholder("Username", username);
