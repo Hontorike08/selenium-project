@@ -103,7 +103,7 @@
                     <div class="method-list-content passed suite-Surefire_suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Surefire_suite" title="runner.TestRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Add item to cart&quot;, &quot;Functional Test&quot;)">runScenario("Add item to cart", "Functional Test")</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Surefire_suite" title="runner.TestRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Delete item from cart&quot;, &quot;Functional Test&quot;)">runScenario("Delete item from cart", "Functional Test")</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Surefire_suite -->
@@ -126,10 +126,10 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="runScenario(&quot;Add item to cart&quot;, &quot;Functional Test&quot;)">
-                  </a> <!-- runScenario("Add item to cart", "Functional Test") -->
+                  <a name="runScenario(&quot;Delete item from cart&quot;, &quot;Functional Test&quot;)">
+                  </a> <!-- runScenario("Delete item from cart", "Functional Test") -->
                   <span class="method-name">runScenario</span>
-                  <span class="parameters">("Add item to cart","Functional Test")</span>
+                  <span class="parameters">("Delete item from cart","Functional Test")</span>
                   <em>
 (Runs Cucumber Scenarios)                  </em>
                 </div> <!-- method-content -->
@@ -144,8 +144,8 @@
             <pre>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
-&lt;suite name=&quot;Surefire suite&quot; verbose=&quot;0&quot;&gt;
-  &lt;test thread-count=&quot;5&quot; name=&quot;Surefire test&quot; verbose=&quot;0&quot;&gt;
+&lt;suite thread-count=&quot;1&quot; name=&quot;Surefire suite&quot; verbose=&quot;0&quot;&gt;
+  &lt;test thread-count=&quot;1&quot; name=&quot;Surefire test&quot; verbose=&quot;0&quot;&gt;
     &lt;classes&gt;
       &lt;class name=&quot;runner.TestRunner&quot;/&gt;
       &lt;class name=&quot;stepdefinitions.SDIdxTest&quot;/&gt;
@@ -200,12 +200,12 @@ data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'runScenario')
 data.setCell(0, 2, 'runner.TestRunner')
-data.setCell(0, 3, 36495);
+data.setCell(0, 3, 79180);
 window.suiteTableData['Surefire_suite']= { tableData: data, tableDiv: 'times-div-Surefire_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 36 seconds</span>
+              <span class="suite-total-time">Total running time: 1 minutes</span>
               <div id="times-div-Surefire_suite">
               </div> <!-- times-div-Surefire_suite -->
             </div> <!-- times-div -->
@@ -233,16 +233,16 @@ return data;
             <div class="chronological-class">
               <div class="chronological-class-name">runner.TestRunner</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
-                <span class="method-name">setUpClass(org.testng.TestRunner@25b52284)</span>
+                <span class="method-name">setUpClass(org.testng.TestRunner@7bab5898)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
-                <span class="method-name">runScenario("Add item to cart", "Functional Test")</span>
-                <span class="method-start">471 ms</span>
+                <span class="method-name">runScenario("Delete item from cart", "Functional Test")</span>
+                <span class="method-start">530 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">tearDownClass</span>
-                <span class="method-start">36972 ms</span>
+                <span class="method-start">79726 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
