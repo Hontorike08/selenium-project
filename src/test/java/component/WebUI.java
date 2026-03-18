@@ -93,6 +93,18 @@ public class WebUI {
         }
     }
 
+    public static void setText(By locator, String value) {
+        try {
+            WebElement field = findElement(locator);
+            field.clear();
+            field.sendKeys(value);
+            System.out.println("SUCCESS: Input '" + value + "' into field: " + locator.toString());
+        } catch (TimeoutException e) {
+            System.out.println("ERROR: Field not found after waiting 10 seconds -> " + locator.toString());
+            throw new RuntimeException("Element not found: " + locator.toString());
+        }
+    }
+
     public static void clickNavbar(String menuName) {
         try {
             By locator = By.xpath("//span[normalize-space()='" + menuName + "']");
@@ -181,6 +193,24 @@ public class WebUI {
         } catch (TimeoutException e) {
             System.out.println("ERROR: Text: '" + text + "' not found after waiting 10 seconds.");
             throw new RuntimeException("Element not found");
+        }
+    }
+
+    public static void verifyTextContainsByLocator(By locator, String expectedText) {
+        try {
+            WebElement element = findElement(locator);
+            String actualText = element.getText();
+
+            if (actualText.contains(expectedText)) {
+                System.out.println("SUCCESS: Text contains '" + expectedText + "'");
+            } else {
+                System.out.println("ERROR: Expected text to contain '" + expectedText + "', but got '" + actualText + "'");
+                throw new AssertionError("Text does not contain expected substring");
+            }
+
+        } catch (TimeoutException e) {
+            System.out.println("ERROR: Element not found after waiting 10 seconds -> " + locator.toString());
+            throw new RuntimeException("Element not found: " + locator.toString());
         }
     }
 
