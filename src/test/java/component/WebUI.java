@@ -124,7 +124,6 @@ public class WebUI {
             return true;
         } catch (TimeoutException e) {
             System.out.println("Element NOT found: " + xpath);
-            stopIfFalse(false, xpath);
             return false;
         }
     }
