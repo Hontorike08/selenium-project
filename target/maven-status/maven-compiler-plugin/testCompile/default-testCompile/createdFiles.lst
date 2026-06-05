@@ -1,6 +1,5 @@
 stepdefinitions\SDIdxTest.class
-stepdefinitions\SDTesting.class
-base\DriverManager.class
 component\WebUI.class
-stepdefinitions\palindrom.class
+stepdefinitions\SDTesting.class
 runner\TestRunner.class
+base\DriverManager.class

@@ -58,19 +58,19 @@ public class SDIdxTest {
     @And("user input first name {string}")
     public void user_input_first_name(String firstName) {
         WebUI.setTextByName("customer[first_name]", firstName);
-        WebUI.delay(10);
+        WebUI.delay(2);
     }
 
     @And("user input last name {string}")
     public void user_input_last_name(String lastName) {
         WebUI.setTextByName("customer[last_name]", lastName);
-        WebUI.delay(10);
+        WebUI.delay(2);
     }
 
     @And("user input email address {string}")
     public void user_input_email_address(String email) {
         WebUI.setTextByName("customer[email]", email);
-        WebUI.delay(5);
+        WebUI.delay(2);
     }
 
     @And("user input password {string}")
@@ -176,6 +176,47 @@ public class SDIdxTest {
         }
     }
 
+    public void verif_update_cart_page(String update, String product, String expectedQty) {
+        if(update.equals("Yes")) {
+            WebUI.delay(1);
+
+            // Get current base price
+            String baseValue = WebUI.getText(By.xpath("//h3[a[contains(normalize-space(text()),'" + product + "')]]/ancestor::div[@class='row']//div[contains(@class,'price')]"));
+            String price = baseValue.replace("£", "").trim();
+            System.out.println("price: " + price);
+
+            // Calculate expected total for the product based on qty and base price
+            int calcTotal = Integer.parseInt(expectedQty) * (int) Double.parseDouble(price);
+            System.out.println("Price deducted: " + calcTotal);
+
+            // Subtract the old total for the product from the grand total before updating the quantity
+            grandExpectedTotal -= Double.parseDouble(price);
+            System.out.println("Grand Total after deduction: " + grandExpectedTotal);
+
+            WebUI.setText(By.xpath("//h3[a[contains(normalize-space(text()),'" + product + "')]]/ancestor::div[@class='row']//input[@name='updates[]']"), expectedQty);
+            WebUI.click(By.xpath("//input[@type='submit' and @value='Update']"));
+            WebUI.delay(3);
+            WebUI.click(By.xpath("//a[contains(normalize-space(.), 'My Cart')]"));
+        } else if(update.equals("Delete")) {
+            // Get current base price
+            String baseValue = WebUI.getText(By.xpath("//h3[a[contains(normalize-space(text()),'" + product + "')]]/ancestor::div[@class='row']//div[contains(@class,'price')]"));
+            String price = baseValue.replace("£", "").trim();
+            System.out.println("price: " + price);
+            
+            // Calculate expected total for the product based on qty and base price
+            int calcTotal = Integer.parseInt(expectedQty) * (int) Double.parseDouble(price);
+            System.out.println("Price deducted: " + calcTotal);
+            
+            // Subtract the old total for the product from the grand total before updating the quantity
+            grandExpectedTotal -= Double.parseDouble(price);
+            System.out.println("Grand Total after deduction: " + grandExpectedTotal);
+            WebUI.click(By.xpath("//a[contains(normalize-space(.), 'My Cart')]"));
+            WebUI.delay(3);
+        } else {
+            System.out.println("Skip updating qty");
+        }
+    }
+
     @Then("user go to cart page and verify product exist and qty and total")
     public void user_go_to_cart_page_and_verify_product(DataTable table) {
         WebUI.clickButtonByLabel("Check Out");
@@ -199,24 +240,27 @@ public class SDIdxTest {
                 expectedTotal = expectedTotal.trim();
             }
 
-            if(update.equals("Yes")) {
-                WebUI.delay(1);
+            // Verif if need to update qty in cart
+            verif_update_cart_page(update, product, expectedQty);
 
-                // Get current base price
-                String baseValue = WebUI.getText(By.xpath("//h3[a[contains(normalize-space(text()),'" + product + "')]]/ancestor::div[@class='row']//div[contains(@class,'price')]"));
-                String price = baseValue.replace("£", "").trim();
-                System.out.println("price: " + price);
+            // if(update.equals("Yes")) {
+            //     WebUI.delay(1);
 
-                // Subtract the old total for the product from the grand total before updating the quantity
-                grandExpectedTotal -= Double.parseDouble(price);
+            //     // Get current base price
+            //     String baseValue = WebUI.getText(By.xpath("//h3[a[contains(normalize-space(text()),'" + product + "')]]/ancestor::div[@class='row']//div[contains(@class,'price')]"));
+            //     String price = baseValue.replace("£", "").trim();
+            //     System.out.println("price: " + price);
 
-                WebUI.setText(By.xpath("//h3[a[contains(normalize-space(text()),'" + product + "')]]/ancestor::div[@class='row']//input[@name='updates[]']"), expectedQty);
-                WebUI.click(By.xpath("//input[@type='submit' and @value='Update']"));
-                WebUI.delay(3);
-                WebUI.click(By.xpath("//a[contains(normalize-space(.), 'My Cart')]"));
-            } else {
-                System.out.println("Skip updating qty");
-            }
+            //     // Subtract the old total for the product from the grand total before updating the quantity
+            //     grandExpectedTotal -= Double.parseDouble(price);
+
+            //     WebUI.setText(By.xpath("//h3[a[contains(normalize-space(text()),'" + product + "')]]/ancestor::div[@class='row']//input[@name='updates[]']"), expectedQty);
+            //     WebUI.click(By.xpath("//input[@type='submit' and @value='Update']"));
+            //     WebUI.delay(3);
+            //     WebUI.click(By.xpath("//a[contains(normalize-space(.), 'My Cart')]"));
+            // } else {
+            //     System.out.println("Skip updating qty");
+            // }
             
             // Verify product exists
             System.out.println("Verifying product: " + product);
@@ -268,6 +312,14 @@ public class SDIdxTest {
         for (Map<String, String> row : rows) {
             String product = row.get("product").trim();
             System.out.println("Deleting product: " + product);
+
+            // Get Quantity
+            String getQty = WebUI.getValue(By.xpath("//h3[a[contains(normalize-space(text()),'" + product + "')]]/ancestor::div[@class='row']//input[@name='updates[]']"));
+            System.out.println("getQty: " + getQty);
+
+            // Update qty
+            verif_update_cart_page("Delete", product, getQty);
+
             WebUI.click(By.xpath("//h3[a[contains(normalize-space(text()),'" + product + "')]]/ancestor::div[@class='row']/div[@class='one column remove omega desktop']/a"));
             WebUI.delay(3);
             WebUI.click(By.xpath("//a[contains(normalize-space(.), 'My Cart')]"));
@@ -335,6 +387,7 @@ public class SDIdxTest {
 
     @Then("user close browser")
     public void user_close_browser() {
+        grandExpectedTotal = 0;
         DriverManager.quitDriver();
     }
 }

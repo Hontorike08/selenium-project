@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="TestSuite" time="74.935" tests="1" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="TestSuite" time="254.343" tests="5" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.vm.info" value="mixed mode"/>
     <property name="file.encoding" value="Cp1252"/>
@@ -30,7 +30,7 @@
     <property name="java.specification.version" value="11"/>
     <property name="user.script" value=""/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
-    <property name="sun.java.command" value="C:\Users\202508002-Yohanes\AppData\Local\Temp\surefire4501852846619940691\surefirebooter1649239920926691103.jar C:\Users\202508002-Yohanes\AppData\Local\Temp\surefire4501852846619940691 2026-03-18T14-16-47_991-jvmRun1 surefire1708818634379311377tmp surefire_07674228126785120239tmp"/>
+    <property name="sun.java.command" value="C:\Users\202508002-Yohanes\AppData\Local\Temp\surefire5287948386954290718\surefirebooter4720405294791307114.jar C:\Users\202508002-Yohanes\AppData\Local\Temp\surefire5287948386954290718 2026-03-18T16-34-56_832-jvmRun1 surefire2037846049061348743tmp surefire_06217270622046814777tmp"/>
     <property name="user.timezone" value="Asia/Bangkok"/>
     <property name="surefire.test.class.path" value="D:\QA\PrivateProject\selenium-project\target\test-classes;D:\QA\PrivateProject\selenium-project\target\classes;C:\Users\202508002-Yohanes\.m2\repository\org\seleniumhq\selenium\selenium-java\4.25.0\selenium-java-4.25.0.jar;C:\Users\202508002-Yohanes\.m2\repository\org\seleniumhq\selenium\selenium-api\4.25.0\selenium-api-4.25.0.jar;C:\Users\202508002-Yohanes\.m2\repository\org\jspecify\jspecify\1.0.0\jspecify-1.0.0.jar;C:\Users\202508002-Yohanes\.m2\repository\org\seleniumhq\selenium\selenium-chrome-driver\4.25.0\selenium-chrome-driver-4.25.0.jar;C:\Users\202508002-Yohanes\.m2\repository\com\google\auto\service\auto-service-annotations\1.1.1\auto-service-annotations-1.1.1.jar;C:\Users\202508002-Yohanes\.m2\repository\org\seleniumhq\selenium\selenium-chromium-driver\4.25.0\selenium-chromium-driver-4.25.0.jar;C:\Users\202508002-Yohanes\.m2\repository\org\seleniumhq\selenium\selenium-json\4.25.0\selenium-json-4.25.0.jar;C:\Users\202508002-Yohanes\.m2\repository\org\seleniumhq\selenium\selenium-manager\4.25.0\selenium-manager-4.25.0.jar;C:\Users\202508002-Yohanes\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v127\4.25.0\selenium-devtools-v127-4.25.0.jar;C:\Users\202508002-Yohanes\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v128\4.25.0\selenium-devtools-v128-4.25.0.jar;C:\Users\202508002-Yohanes\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v129\4.25.0\selenium-devtools-v129-4.25.0.jar;C:\Users\202508002-Yohanes\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v85\4.25.0\selenium-devtools-v85-4.25.0.jar;C:\Users\202508002-Yohanes\.m2\repository\org\seleniumhq\selenium\selenium-edge-driver\4.25.0\selenium-edge-driver-4.25.0.jar;C:\Users\202508002-Yohanes\.m2\repository\org\seleniumhq\selenium\selenium-firefox-driver\4.25.0\selenium-firefox-driver-4.25.0.jar;C:\Users\202508002-Yohanes\.m2\repository\org\seleniumhq\selenium\selenium-http\4.25.0\selenium-http-4.25.0.jar;C:\Users\202508002-Yohanes\.m2\repository\dev\failsafe\failsafe\3.3.2\failsafe-3.3.2.jar;C:\Users\202508002-Yohanes\.m2\repository\org\seleniumhq\selenium\selenium-ie-driver\4.25.0\selenium-ie-driver-4.25.0.jar;C:\Users\202508002-Yohanes\.m2\repository\org\seleniumhq\selenium\selenium-remote-driver\4.25.0\selenium-remote-driver-4.25.0.jar;C:\Users\202508002-Yohanes\.m2\repository\com\google\guava\guava\33.3.0-jre\guava-33.3.0-jre.jar;C:\Users\202508002-Yohanes\.m2\repository\com\google\guava\failureaccess\1.0.2\failureaccess-1.0.2.jar;C:\Users\202508002-Yohanes\.m2\repository\com\google\guava\listenablefuture\9999.0-empty-to-avoid-conflict-with-guava\listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar;C:\Users\202508002-Yohanes\.m2\repository\com\google\code\findbugs\jsr305\3.0.2\jsr305-3.0.2.jar;C:\Users\202508002-Yohanes\.m2\repository\org\checkerframework\checker-qual\3.43.0\checker-qual-3.43.0.jar;C:\Users\202508002-Yohanes\.m2\repository\com\google\errorprone\error_prone_annotations\2.28.0\error_prone_annotations-2.28.0.jar;C:\Users\202508002-Yohanes\.m2\repository\com\google\j2objc\j2objc-annotations\3.0.0\j2objc-annotations-3.0.0.jar;C:\Users\202508002-Yohanes\.m2\repository\io\opentelemetry\semconv\opentelemetry-semconv\1.25.0-alpha\opentelemetry-semconv-1.25.0-alpha.jar;C:\Users\202508002-Yohanes\.m2\repository\io\opentelemetry\opentelemetry-api\1.42.1\opentelemetry-api-1.42.1.jar;C:\Users\202508002-Yohanes\.m2\repository\io\opentelemetry\opentelemetry-context\1.42.1\opentelemetry-context-1.42.1.jar;C:\Users\202508002-Yohanes\.m2\repository\io\opentelemetry\opentelemetry-exporter-logging\1.42.1\opentelemetry-exporter-logging-1.42.1.jar;C:\Users\202508002-Yohanes\.m2\repository\io\opentelemetry\opentelemetry-sdk-common\1.42.1\opentelemetry-sdk-common-1.42.1.jar;C:\Users\202508002-Yohanes\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure-spi\1.42.1\opentelemetry-sdk-extension-autoconfigure-spi-1.42.1.jar;C:\Users\202508002-Yohanes\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure\1.42.1\opentelemetry-sdk-extension-autoconfigure-1.42.1.jar;C:\Users\202508002-Yohanes\.m2\repository\io\opentelemetry\opentelemetry-api-incubator\1.42.1-alpha\opentelemetry-api-incubator-1.42.1-alpha.jar;C:\Users\202508002-Yohanes\.m2\repository\io\opentelemetry\opentelemetry-sdk-trace\1.42.1\opentelemetry-sdk-trace-1.42.1.jar;C:\Users\202508002-Yohanes\.m2\repository\io\opentelemetry\opentelemetry-sdk\1.42.1\opentelemetry-sdk-1.42.1.jar;C:\Users\202508002-Yohanes\.m2\repository\io\opentelemetry\opentelemetry-sdk-metrics\1.42.1\opentelemetry-sdk-metrics-1.42.1.jar;C:\Users\202508002-Yohanes\.m2\repository\io\opentelemetry\opentelemetry-sdk-logs\1.42.1\opentelemetry-sdk-logs-1.42.1.jar;C:\Users\202508002-Yohanes\.m2\repository\net\bytebuddy\byte-buddy\1.15.1\byte-buddy-1.15.1.jar;C:\Users\202508002-Yohanes\.m2\repository\org\seleniumhq\selenium\selenium-os\4.25.0\selenium-os-4.25.0.jar;C:\Users\202508002-Yohanes\.m2\repository\org\apache\commons\commons-exec\1.4.0\commons-exec-1.4.0.jar;C:\Users\202508002-Yohanes\.m2\repository\org\seleniumhq\selenium\selenium-safari-driver\4.25.0\selenium-safari-driver-4.25.0.jar;C:\Users\202508002-Yohanes\.m2\repository\org\seleniumhq\selenium\selenium-support\4.25.0\selenium-support-4.25.0.jar;C:\Users\202508002-Yohanes\.m2\repository\org\testng\testng\7.10.2\testng-7.10.2.jar;C:\Users\202508002-Yohanes\.m2\repository\org\slf4j\slf4j-api\1.7.36\slf4j-api-1.7.36.jar;C:\Users\202508002-Yohanes\.m2\repository\com\beust\jcommander\1.82\jcommander-1.82.jar;C:\Users\202508002-Yohanes\.m2\repository\org\webjars\jquery\3.7.1\jquery-3.7.1.jar;C:\Users\202508002-Yohanes\.m2\repository\io\cucumber\cucumber-java\7.19.0\cucumber-java-7.19.0.jar;C:\Users\202508002-Yohanes\.m2\repository\io\cucumber\cucumber-core\7.19.0\cucumber-core-7.19.0.jar;C:\Users\202508002-Yohanes\.m2\repository\io\cucumber\cucumber-gherkin\7.19.0\cucumber-gherkin-7.19.0.jar;C:\Users\202508002-Yohanes\.m2\repository\io\cucumber\cucumber-gherkin-messages\7.19.0\cucumber-gherkin-messages-7.19.0.jar;C:\Users\202508002-Yohanes\.m2\repository\io\cucumber\gherkin\28.0.0\gherkin-28.0.0.jar;C:\Users\202508002-Yohanes\.m2\repository\io\cucumber\messages\24.1.0\messages-24.1.0.jar;C:\Users\202508002-Yohanes\.m2\repository\io\cucumber\testng-xml-formatter\0.2.0\testng-xml-formatter-0.2.0.jar;C:\Users\202508002-Yohanes\.m2\repository\io\cucumber\query\12.2.0\query-12.2.0.jar;C:\Users\202508002-Yohanes\.m2\repository\io\cucumber\tag-expressions\6.1.0\tag-expressions-6.1.0.jar;C:\Users\202508002-Yohanes\.m2\repository\io\cucumber\cucumber-expressions\17.1.0\cucumber-expressions-17.1.0.jar;C:\Users\202508002-Yohanes\.m2\repository\io\cucumber\datatable\7.19.0\datatable-7.19.0.jar;C:\Users\202508002-Yohanes\.m2\repository\io\cucumber\cucumber-plugin\7.19.0\cucumber-plugin-7.19.0.jar;C:\Users\202508002-Yohanes\.m2\repository\io\cucumber\docstring\7.19.0\docstring-7.19.0.jar;C:\Users\202508002-Yohanes\.m2\repository\io\cucumber\html-formatter\21.7.0\html-formatter-21.7.0.jar;C:\Users\202508002-Yohanes\.m2\repository\io\cucumber\junit-xml-formatter\0.5.0\junit-xml-formatter-0.5.0.jar;C:\Users\202508002-Yohanes\.m2\repository\io\cucumber\ci-environment\10.0.1\ci-environment-10.0.1.jar;C:\Users\202508002-Yohanes\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\202508002-Yohanes\.m2\repository\io\cucumber\cucumber-testng\7.19.0\cucumber-testng-7.19.0.jar;C:\Users\202508002-Yohanes\.m2\repository\commons-io\commons-io\2.20.0\commons-io-2.20.0.jar;C:\Users\202508002-Yohanes\.m2\repository\junit\junit\4.13.2\junit-4.13.2.jar;C:\Users\202508002-Yohanes\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
     <property name="java.vendor.version" value="18.9"/>
@@ -38,14 +38,14 @@
     <property name="java.vendor" value="Oracle Corporation"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="sun.arch.data.model" value="64"/>
-    <property name="cucumber.filter.tags" value="@testIDX-update-qty"/>
+    <property name="cucumber.filter.tags" value="@final"/>
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="os.arch" value="amd64"/>
     <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
     <property name="path.separator" value=";"/>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="java.vendor.url" value="https://java.oracle.com/"/>
-    <property name="surefire.real.class.path" value="C:\Users\202508002-Yohanes\AppData\Local\Temp\surefire4501852846619940691\surefirebooter1649239920926691103.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\202508002-Yohanes\AppData\Local\Temp\surefire5287948386954290718\surefirebooter4720405294791307114.jar"/>
     <property name="sun.desktop" value="windows"/>
     <property name="java.vm.version" value="11.0.29+8-LTS-387"/>
     <property name="java.vm.specification.version" value="11"/>
@@ -62,12 +62,209 @@
     <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
     <property name="user.country" value="US"/>
   </properties>
-  <testcase name="runScenario[&quot;Update item quantity in cart&quot;, &quot;Functional Test&quot;](1)" classname="runner.TestRunner" time="73.948">
+  <testcase name="runScenario[&quot;Create Account&quot;, &quot;Functional Test&quot;](1)" classname="runner.TestRunner" time="21.056">
     <system-out><![CDATA[
-@testIDX-update-qty
-Scenario Outline: Update item quantity in cart                                                                                                                                                                                                                                                                                                                                                               &amp#27;[90m# src/test/resources/features/testIDX.feature:89&amp#27;[0m
+@testIDX-create-account @final
+Scenario Outline: Create Account                                                                           &amp#27;[90m# src/test/resources/features/testIDX.feature:16&amp#27;[0m
+URL: https://sauce-demo.myshopify.com/account/register
+  &amp#27;[32mGiven &amp#27;[0m&amp#27;[32muser opens Firefox browser and navigate to url &amp#27;[0m&amp#27;[32m&amp#27;[1m"https://sauce-demo.myshopify.com/account/register"&amp#27;[0m &amp#27;[90m# stepdefinitions.SDIdxTest.open_firefox_and_go_to_url(java.lang.String)&amp#27;[0m
+User is in Create Account page
+  &amp#27;[32mThen &amp#27;[0m&amp#27;[32muser verify is in Create Account page&amp#27;[0m                                                               &amp#27;[90m# stepdefinitions.SDIdxTest.user_verify_is_in_create_account_page()&amp#27;[0m
+SUCCESS: Input 'John' into field with name 'customer[first_name]'
+DELAY: Waiting for 2 seconds...
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32muser input first name &amp#27;[0m&amp#27;[32m&amp#27;[1m"John"&amp#27;[0m                                                                         &amp#27;[90m# stepdefinitions.SDIdxTest.user_input_first_name(java.lang.String)&amp#27;[0m
+SUCCESS: Input 'Doe' into field with name 'customer[last_name]'
+DELAY: Waiting for 2 seconds...
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32muser input last name &amp#27;[0m&amp#27;[32m&amp#27;[1m"Doe"&amp#27;[0m                                                                           &amp#27;[90m# stepdefinitions.SDIdxTest.user_input_last_name(java.lang.String)&amp#27;[0m
+SUCCESS: Input 'najyvu2497@guysmail.com' into field with name 'customer[email]'
+DELAY: Waiting for 2 seconds...
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32muser input email address &amp#27;[0m&amp#27;[32m&amp#27;[1m"najyvu2497@guysmail.com"&amp#27;[0m                                                   &amp#27;[90m# stepdefinitions.SDIdxTest.user_input_email_address(java.lang.String)&amp#27;[0m
+SUCCESS: Input 'Testing12345' into field with name 'customer[password]'
+DELAY: Waiting for 2 seconds...
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32muser input password &amp#27;[0m&amp#27;[32m&amp#27;[1m"Testing12345"&amp#27;[0m                                                                   &amp#27;[90m# stepdefinitions.SDIdxTest.user_input_password(java.lang.String)&amp#27;[0m
+DELAY: Waiting for 1 seconds...
+DELAY: Waiting for 2 seconds...
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32muser press button create&amp#27;[0m                                                                             &amp#27;[90m# stepdefinitions.SDIdxTest.user_press_button_create()&amp#27;[0m
+  &amp#27;[32mThen &amp#27;[0m&amp#27;[32muser close browser&amp#27;[0m                                                                                  &amp#27;[90m# stepdefinitions.SDIdxTest.user_close_browser()&amp#27;[0m
+]]></system-out>
+    <system-err><![CDATA[SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+]]></system-err>
+  </testcase>
+  <testcase name="runScenario[&quot;Login&quot;, &quot;Functional Test&quot;](2)" classname="runner.TestRunner" time="15.383">
+    <system-out><![CDATA[
+@testIDX-login @final
+Scenario Outline: Login                                                                                 &amp#27;[90m# src/test/resources/features/testIDX.feature:29&amp#27;[0m
+URL: https://sauce-demo.myshopify.com/account/login
+  &amp#27;[32mGiven &amp#27;[0m&amp#27;[32muser opens Firefox browser and navigate to url &amp#27;[0m&amp#27;[32m&amp#27;[1m"https://sauce-demo.myshopify.com/account/login"&amp#27;[0m &amp#27;[90m# stepdefinitions.SDIdxTest.open_firefox_and_go_to_url(java.lang.String)&amp#27;[0m
+User is in Customer Login page
+  &amp#27;[32mThen &amp#27;[0m&amp#27;[32muser verify is in Login page&amp#27;[0m                                                                     &amp#27;[90m# stepdefinitions.SDIdxTest.user_verify_is_in_login_page()&amp#27;[0m
+SUCCESS: Input 'tetexe422@inboxbear.com' into field with name 'customer[email]'
+DELAY: Waiting for 2 seconds...
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32muser input email address &amp#27;[0m&amp#27;[32m&amp#27;[1m"tetexe422@inboxbear.com"&amp#27;[0m                                                &amp#27;[90m# stepdefinitions.SDIdxTest.user_input_email_address(java.lang.String)&amp#27;[0m
+SUCCESS: Input 'test12345' into field with name 'customer[password]'
+DELAY: Waiting for 2 seconds...
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32muser input password &amp#27;[0m&amp#27;[32m&amp#27;[1m"test12345"&amp#27;[0m                                                                   &amp#27;[90m# stepdefinitions.SDIdxTest.user_input_password(java.lang.String)&amp#27;[0m
+DELAY: Waiting for 1 seconds...
+DELAY: Waiting for 2 seconds...
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32muser press button sign in&amp#27;[0m                                                                         &amp#27;[90m# stepdefinitions.SDIdxTest.user_press_button_sign_in()&amp#27;[0m
+  &amp#27;[32mThen &amp#27;[0m&amp#27;[32muser close browser&amp#27;[0m                                                                               &amp#27;[90m# stepdefinitions.SDIdxTest.user_close_browser()&amp#27;[0m
+]]></system-out>
+  </testcase>
+  <testcase name="runScenario[&quot;Delete item from cart&quot;, &quot;Functional Test&quot;](3)" classname="runner.TestRunner" time="87.967">
+    <system-out><![CDATA[
+@testIDX-delete-from-cart @final @test
+Scenario Outline: Delete item from cart                                                    &amp#27;[90m# src/test/resources/features/testIDX.feature:32&amp#27;[0m
 URL: https://sauce-demo.myshopify.com/
-  &amp#27;[32mGiven &amp#27;[0m&amp#27;[32muser opens Chrome browser and navigate to url &amp#27;[0m&amp#27;[32m&amp#27;[1m"https://sauce-demo.myshopify.com/"&amp#27;[0m                                                                                                                                                                                                                                                                                                                    &amp#27;[90m# stepdefinitions.SDTesting.open_chrome_and_go_to_url(java.lang.String)&amp#27;[0m
+  &amp#27;[32mGiven &amp#27;[0m&amp#27;[32muser opens Firefox browser and navigate to url &amp#27;[0m&amp#27;[32m&amp#27;[1m"https://sauce-demo.myshopify.com/"&amp#27;[0m &amp#27;[90m# stepdefinitions.SDIdxTest.open_firefox_and_go_to_url(java.lang.String)&amp#27;[0m
+DELAY: Waiting for 5 seconds...
+Processing: Grey jacket
+Processing: 
+Processing: 
+DELAY: Waiting for 2 seconds...
+DELAY: Waiting for 4 seconds...
+DELAY: Waiting for 4 seconds...
+Processing: Noir jacket
+Processing: M
+Processing: Red
+DELAY: Waiting for 2 seconds...
+Element FOUND: //label[normalize-space()='Size']
+SUCCESS: Selected 'M'
+Element FOUND: //label[normalize-space()='Color']
+SUCCESS: Selected 'Red'
+DELAY: Waiting for 4 seconds...
+DELAY: Waiting for 4 seconds...
+Processing: Striped top
+Processing: 
+Processing: 
+DELAY: Waiting for 2 seconds...
+DELAY: Waiting for 4 seconds...
+DELAY: Waiting for 4 seconds...
+  &amp#27;[32mThen &amp#27;[0m&amp#27;[32muser choose products and add to cart&amp#27;[0m                                                &amp#27;[90m# stepdefinitions.SDIdxTest.user_choose_products_and_add_to_cart(io.cucumber.datatable.DataTable)&amp#27;[0m
+    | product     | size    | color   |
+    | Grey jacket | [empty] | [empty] |
+    | Noir jacket | M       | Red     |
+    | Striped top | [empty] | [empty] |
+SUCCESS: Press button with label: 'Check Out'
+DELAY: Waiting for 3 seconds...
+Skip updating qty
+Verifying product: Grey jacket
+SUCCESS: Text contains: 'Grey jacket'
+Value: 1
+getQty: 1
+price: 55.00
+calcTotal: 55
+Skip updating qty
+Verifying product: Noir jacket
+SUCCESS: Text contains: 'Noir jacket'
+Value: 1
+getQty: 1
+price: 60.00
+calcTotal: 60
+Skip updating qty
+Verifying product: Striped top
+SUCCESS: Text contains: 'Striped top'
+Value: 1
+getQty: 1
+price: 50.00
+calcTotal: 50
+Expected Grand Total: 165
+Actual Grand Total: 165
+  &amp#27;[32mThen &amp#27;[0m&amp#27;[32muser go to cart page and verify product exist and qty and total&amp#27;[0m                     &amp#27;[90m# stepdefinitions.SDIdxTest.user_go_to_cart_page_and_verify_product(io.cucumber.datatable.DataTable)&amp#27;[0m
+    | product     | qty | total |
+    | Grey jacket | 1   | 55    |
+    | Noir jacket | 1   | 60    |
+    | Striped top | 1   | 50    |
+DELAY: Waiting for 1 seconds...
+Deleting product: Grey jacket
+Value: 1
+getQty: 1
+price: 55.00
+Price deducted: 55
+Grand Total after deduction: 110
+DELAY: Waiting for 3 seconds...
+DELAY: Waiting for 3 seconds...
+Element NOT found: //h3[a[contains(normalize-space(text()),'Grey jacket')]]
+Product successfully deleted from cart: Grey jacket
+Deleting product: Noir jacket
+Value: 1
+getQty: 1
+price: 60.00
+Price deducted: 60
+Grand Total after deduction: 50
+DELAY: Waiting for 3 seconds...
+DELAY: Waiting for 3 seconds...
+Element NOT found: //h3[a[contains(normalize-space(text()),'Noir jacket')]]
+Product successfully deleted from cart: Noir jacket
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32muser delete product from cart and verify product not exist in cart&amp#27;[0m                   &amp#27;[90m# stepdefinitions.SDIdxTest.user_delete_product_from_cart_and_verify_product_not_exist_in_cart(io.cucumber.datatable.DataTable)&amp#27;[0m
+    | product     |
+    | Grey jacket |
+    | Noir jacket |
+  &amp#27;[32mThen &amp#27;[0m&amp#27;[32muser close browser&amp#27;[0m                                                                  &amp#27;[90m# stepdefinitions.SDIdxTest.user_close_browser()&amp#27;[0m
+]]></system-out>
+  </testcase>
+  <testcase name="runScenario[&quot;Add item to cart&quot;, &quot;Functional Test&quot;](4)" classname="runner.TestRunner" time="52.266">
+    <system-out><![CDATA[
+@testIDX-add-to-cart @final
+Scenario Outline: Add item to cart                                                                                                                                                                                                                                                                                                                                                                           &amp#27;[90m# src/test/resources/features/testIDX.feature:65&amp#27;[0m
+URL: https://sauce-demo.myshopify.com/
+  &amp#27;[32mGiven &amp#27;[0m&amp#27;[32muser opens Firefox browser and navigate to url &amp#27;[0m&amp#27;[32m&amp#27;[1m"https://sauce-demo.myshopify.com/"&amp#27;[0m                                                                                                                                                                                                                                                                                                                   &amp#27;[90m# stepdefinitions.SDIdxTest.open_firefox_and_go_to_url(java.lang.String)&amp#27;[0m
+DELAY: Waiting for 5 seconds...
+Processing: Striped top
+Processing: 
+Processing: 
+DELAY: Waiting for 2 seconds...
+DELAY: Waiting for 4 seconds...
+DELAY: Waiting for 4 seconds...
+  &amp#27;[32mThen &amp#27;[0m&amp#27;[32muser choose products and add to cart&amp#27;[0m                                                                                                                                                                                                                                                                                                                                                                  &amp#27;[90m# stepdefinitions.SDIdxTest.user_choose_products_and_add_to_cart(io.cucumber.datatable.DataTable)&amp#27;[0m
+    | product     | size    | color   |
+    | Striped top | [empty] | [empty] |
+SUCCESS: Press button with label: 'Check Out'
+DELAY: Waiting for 3 seconds...
+Skip updating qty
+Verifying product: Striped top
+SUCCESS: Text contains: 'Striped top'
+Value: 1
+getQty: 1
+price: 50.00
+calcTotal: 50
+Expected Grand Total: 50
+Actual Grand Total: 50
+  &amp#27;[32mThen &amp#27;[0m&amp#27;[32muser go to cart page and verify product exist and qty and total&amp#27;[0m                                                                                                                                                                                                                                                                                                                                       &amp#27;[90m# stepdefinitions.SDIdxTest.user_go_to_cart_page_and_verify_product(io.cucumber.datatable.DataTable)&amp#27;[0m
+    | product     | qty | total |
+    | Striped top | 1   | 50    |
+DELAY: Waiting for 5 seconds...
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32muser checkout items&amp#27;[0m                                                                                                                                                                                                                                                                                                                                                                                    &amp#27;[90m# stepdefinitions.SDIdxTest.user_checkout_items()&amp#27;[0m
+DELAY: Waiting for 5 seconds...
+SUCCESS: Input 'tetexe422@inboxbear.com' into field with placeholder 'Email'
+SUCCESS: Input 'John' into field with placeholder 'First name (optional)'
+SUCCESS: Input 'Doe' into field with placeholder 'Last name'
+SUCCESS: Input 'Test Inc' into field with placeholder 'Company (optional)'
+SUCCESS: Input '123 Test St' into field with placeholder 'Address'
+SUCCESS: Input 'Test City' into field with placeholder 'City'
+SUCCESS: Selected 'West Java'
+SUCCESS: Input '12345' into field with placeholder 'Postal code'
+SUCCESS: Input '0821-1054-5855' into field with placeholder 'Phone (optional)'
+DELAY: Waiting for 5 seconds...
+Input Card Details
+SUCCESS: Input '5552 0000 8888 8080' into field with placeholder 'Card number'
+Input Card Number
+SUCCESS: Input slowly '1227'
+DELAY: Waiting for 1 seconds...
+SUCCESS: Input '123' into field with placeholder 'Security code'
+DELAY: Waiting for 1 seconds...
+DELAY: Waiting for 3 seconds...
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32muser verify on payment page and fill email &amp#27;[0m&amp#27;[32m&amp#27;[1m"tetexe422@inboxbear.com"&amp#27;[0m&amp#27;[32m and first name &amp#27;[0m&amp#27;[32m&amp#27;[1m"John"&amp#27;[0m&amp#27;[32m and last name &amp#27;[0m&amp#27;[32m&amp#27;[1m"Doe"&amp#27;[0m&amp#27;[32m and company &amp#27;[0m&amp#27;[32m&amp#27;[1m"Test Inc"&amp#27;[0m&amp#27;[32m and address &amp#27;[0m&amp#27;[32m&amp#27;[1m"123 Test St"&amp#27;[0m&amp#27;[32m and city &amp#27;[0m&amp#27;[32m&amp#27;[1m"Test City"&amp#27;[0m&amp#27;[32m and province &amp#27;[0m&amp#27;[32m&amp#27;[1m"West Java"&amp#27;[0m&amp#27;[32m and postal code &amp#27;[0m&amp#27;[32m&amp#27;[1m"12345"&amp#27;[0m&amp#27;[32m and phone &amp#27;[0m&amp#27;[32m&amp#27;[1m"0821-1054-5855"&amp#27;[0m&amp#27;[32m and card number &amp#27;[0m&amp#27;[32m&amp#27;[1m"5552 0000 8888 8080"&amp#27;[0m&amp#27;[32m and expiry month and year &amp#27;[0m&amp#27;[32m&amp#27;[1m"1227"&amp#27;[0m&amp#27;[32m and cvv &amp#27;[0m&amp#27;[32m&amp#27;[1m"123"&amp#27;[0m&amp#27;[32m and name on card &amp#27;[0m&amp#27;[32m&amp#27;[1m"<firstname>"&amp#27;[0m&amp#27;[32m and click pay now&amp#27;[0m &amp#27;[90m# stepdefinitions.SDIdxTest.user_verify_on_payment_page_and_fill_payment_details(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)&amp#27;[0m
+  &amp#27;[32mThen &amp#27;[0m&amp#27;[32muser close browser&amp#27;[0m                                                                                                                                                                                                                                                                                                                                                                                    &amp#27;[90m# stepdefinitions.SDIdxTest.user_close_browser()&amp#27;[0m
+]]></system-out>
+  </testcase>
+  <testcase name="runScenario[&quot;Update item quantity in cart&quot;, &quot;Functional Test&quot;](5)" classname="runner.TestRunner" time="76.392">
+    <system-out><![CDATA[
+@testIDX-update-qty @final
+Scenario Outline: Update item quantity in cart                                                                                                                                                                                                                                                                                                                                                               &amp#27;[90m# src/test/resources/features/testIDX.feature:88&amp#27;[0m
+URL: https://sauce-demo.myshopify.com/
+  &amp#27;[32mGiven &amp#27;[0m&amp#27;[32muser opens Firefox browser and navigate to url &amp#27;[0m&amp#27;[32m&amp#27;[1m"https://sauce-demo.myshopify.com/"&amp#27;[0m                                                                                                                                                                                                                                                                                                                   &amp#27;[90m# stepdefinitions.SDIdxTest.open_firefox_and_go_to_url(java.lang.String)&amp#27;[0m
 DELAY: Waiting for 5 seconds...
 Processing: Noir jacket
 Processing: M
@@ -116,6 +313,8 @@ SUCCESS: Press button with label: 'Check Out'
 DELAY: Waiting for 3 seconds...
 DELAY: Waiting for 1 seconds...
 price: 50.00
+Price deducted: 100
+Grand Total after deduction: 60
 SUCCESS: Input '2' into field: By.xpath: //h3[a[contains(normalize-space(text()),'Striped top')]]/ancestor::div[@class='row']//input[@name='updates[]']
 DELAY: Waiting for 3 seconds...
 Verifying product: Striped top
@@ -151,15 +350,7 @@ SUCCESS: Input '123' into field with placeholder 'Security code'
 DELAY: Waiting for 1 seconds...
 DELAY: Waiting for 3 seconds...
   &amp#27;[32mAnd &amp#27;[0m&amp#27;[32muser verify on payment page and fill email &amp#27;[0m&amp#27;[32m&amp#27;[1m"tetexe422@inboxbear.com"&amp#27;[0m&amp#27;[32m and first name &amp#27;[0m&amp#27;[32m&amp#27;[1m"John"&amp#27;[0m&amp#27;[32m and last name &amp#27;[0m&amp#27;[32m&amp#27;[1m"Doe"&amp#27;[0m&amp#27;[32m and company &amp#27;[0m&amp#27;[32m&amp#27;[1m"Test Inc"&amp#27;[0m&amp#27;[32m and address &amp#27;[0m&amp#27;[32m&amp#27;[1m"123 Test St"&amp#27;[0m&amp#27;[32m and city &amp#27;[0m&amp#27;[32m&amp#27;[1m"Test City"&amp#27;[0m&amp#27;[32m and province &amp#27;[0m&amp#27;[32m&amp#27;[1m"West Java"&amp#27;[0m&amp#27;[32m and postal code &amp#27;[0m&amp#27;[32m&amp#27;[1m"12345"&amp#27;[0m&amp#27;[32m and phone &amp#27;[0m&amp#27;[32m&amp#27;[1m"0821-1054-5855"&amp#27;[0m&amp#27;[32m and card number &amp#27;[0m&amp#27;[32m&amp#27;[1m"5552 0000 8888 8080"&amp#27;[0m&amp#27;[32m and expiry month and year &amp#27;[0m&amp#27;[32m&amp#27;[1m"1227"&amp#27;[0m&amp#27;[32m and cvv &amp#27;[0m&amp#27;[32m&amp#27;[1m"123"&amp#27;[0m&amp#27;[32m and name on card &amp#27;[0m&amp#27;[32m&amp#27;[1m"<firstname>"&amp#27;[0m&amp#27;[32m and click pay now&amp#27;[0m &amp#27;[90m# stepdefinitions.SDIdxTest.user_verify_on_payment_page_and_fill_payment_details(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)&amp#27;[0m
-  &amp#27;[32mThen &amp#27;[0m&amp#27;[32muser close browser&amp#27;[0m                                                                                                                                                                                                                                                                                                                                                                                    &amp#27;[90m# stepdefinitions.SDTesting.user_close_browser()&amp#27;[0m
+  &amp#27;[32mThen &amp#27;[0m&amp#27;[32muser close browser&amp#27;[0m                                                                                                                                                                                                                                                                                                                                                                                    &amp#27;[90m# stepdefinitions.SDIdxTest.user_close_browser()&amp#27;[0m
 ]]></system-out>
-    <system-err><![CDATA[SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
-SLF4J: Defaulting to no-operation (NOP) logger implementation
-SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-Mar 18, 2026 2:16:51 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
-WARNING: Unable to find CDP implementation matching 146
-Mar 18, 2026 2:16:51 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
-WARNING: Unable to find version of CDP to use for 146.0.7680.80. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.25.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
-]]></system-err>
   </testcase>
 </testsuite>
