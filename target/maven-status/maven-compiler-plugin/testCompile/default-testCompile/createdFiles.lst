@@ -1,5 +1,0 @@
-stepdefinitions\SDIdxTest.class
-component\WebUI.class
-stepdefinitions\SDTesting.class
-runner\TestRunner.class
-base\DriverManager.class
