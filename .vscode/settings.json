@@ -1,0 +1,29 @@
+{
+    "java.configuration.updateBuildConfiguration": "automatic",
+    "java.compile.nullAnalysis.mode": "automatic",
+    "java.debug.settings.onBuildFailureProceed": true,
+    "files.exclude": {
+        "**/~*": true,
+        "**/.*~": true,
+        "**/~$*": true,
+        "**/.~lock*": true
+    },
+    "search.exclude": {
+        "**/~*": true,
+        "**/.*~": true,
+        "**/~$*": true
+    },
+    "java.project.resourceFilters": [
+        "/**/~*",
+        "/**/.*~",
+        "/**/~$*",
+        "/**/*.tmp",
+        "/**/*.temp"
+    ],
+    "cucumber.parameterTypes": [
+        {
+            "name": "booleanValue",
+            "regexp": "true|True|TRUE|false|False|FALSE"
+        }
+    ]
+}
